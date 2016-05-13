@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{A7A5AC64-8538-FCDB-2148-BEF1E3B82B5A}") = "EGIDStudio", "Assembly-CSharp.csproj", "{F56B438A-D018-70BC-6E50-52C445ADB5AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F56B438A-D018-70BC-6E50-52C445ADB5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56B438A-D018-70BC-6E50-52C445ADB5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56B438A-D018-70BC-6E50-52C445ADB5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56B438A-D018-70BC-6E50-52C445ADB5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
