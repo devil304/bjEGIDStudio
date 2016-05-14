@@ -3,6 +3,7 @@
 
 Boilplate ,zawartość:
 -skrypt będący bezładną masą podstawowych funkcji.
+
 Silnik: Unity 3D 5
 
 
