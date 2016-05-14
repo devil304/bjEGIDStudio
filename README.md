@@ -1,8 +1,8 @@
 # Repo zespołu EGID Studio na BialJam 2016
 
 
-Pierwsza wersja boilplate'a.
-Czyste pliki projektu bez niczego.
+Boilplate ,zawartość:
+-skrypt będący bezładną masą podstawowych funkcji.
 Silnik: Unity 3D 5
 
 
