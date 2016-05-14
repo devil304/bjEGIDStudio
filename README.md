@@ -1,7 +1,7 @@
 # Repo zespołu EGID Studio na BialJam 2016
 
 
-Boilplate ,*zawartość*:
+Boilplate ,**zawartość**:
 
 -skrypt będący bezładną masą podstawowych funkcji.
 
