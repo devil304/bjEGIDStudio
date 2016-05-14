@@ -1,4 +1,4 @@
-# Repo zespo硊 EGID Studio na BialJam 2016
+# Repo zespo艂u EGID Studio na BialJam 2016
 
 
 Pierwsza wersja boilplate'a.
@@ -6,4 +6,4 @@ Czyste pliki projektu bez niczego.
 Silnik: Unity 3D 5
 
 
-Uwagi: Do dzia砤nia po synchronizacji nale縴 usun规 folder "metadata" z folderu "Library".
+Uwagi: Do dzia艂ania po synchronizacji nale偶y do projektu wrzuci膰 metadata z innego projektu Unity 5 stworzonego na danym komputerze (jest to spowodowane mo偶liwym konfliktem plik贸w meta r贸偶nych komputer贸w).
