@@ -12,6 +12,8 @@ public class player : MonoBehaviour {
 	public int minm;
 	public int mina;
 	public int mine;
+	public int hep;
+	public int activehep;
 	// Use this for initialization
 	public worldcontroller wc;
 	// Use this for initialization
