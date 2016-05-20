@@ -24,7 +24,14 @@ public class worldcontroller : MonoBehaviour {
 		}
 		if (!pt && !rt) {
 			int cont = 0;
-
+			for (int i = 0; i < ais.Length; i++) {
+				if (ais [i].tura) {
+					cont++;
+				}
+				if (cont >= ais.Length) {
+					pt = true;
+				}
+			}
 		}
 	}
 }
