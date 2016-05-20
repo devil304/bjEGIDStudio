@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class hexp : MonoBehaviour {
-	public string ownername = "null";
 	public float morale;
 	public float economy;
 	public float maxlud;
