@@ -6,6 +6,12 @@ public class hexp : MonoBehaviour {
 	public float economy;
 	public float maxlud;
 	public float lud;
+	public GameObject up;
+	public GameObject down;
+	public GameObject upleft;
+	public GameObject upright;
+	public GameObject downright;
+	public GameObject downleft;
 	// Use this for initialization
 	void Start () {
 		

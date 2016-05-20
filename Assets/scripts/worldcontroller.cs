@@ -4,7 +4,7 @@ using System.Collections;
 public class worldcontroller : MonoBehaviour {
 	public ai[] ais;
 	public bool pt = true;
-	public bool rt = false;
+	public bool rt = false	;
 	public int tc = 1;
 	// Use this for initialization
 	void Start () {
