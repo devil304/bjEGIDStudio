@@ -25,7 +25,7 @@ public class ai : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		def = (morale * economy * army)/1000;
+		def = (morale * economy * army)/10000;
 		if (tura) {
 			morale += upmorale;
 			economy += upeconomy;
