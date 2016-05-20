@@ -15,6 +15,8 @@ public class ai : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (def < 0) {
+			def = 0;
+		}
 	}
 }
