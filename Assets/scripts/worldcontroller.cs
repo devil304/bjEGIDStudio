@@ -31,7 +31,6 @@ public class worldcontroller : MonoBehaviour {
 				}
 				if (cont >= ais.Length) {
 					pt = true;
-					rt = true;
 					tc++;
 				}
 			}

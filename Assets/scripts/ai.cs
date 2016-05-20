@@ -3,12 +3,9 @@ using System.Collections;
 
 public class ai : MonoBehaviour {
 	public float def;
-	public int morale;
-	public int economy;
-	public int army;
-	public int upmorale;
-	public int upeconomy;
-	public int uparmy;
+	public float morale;
+	public float economy;
+	public float army;
 	public int maxm;
 	public int maxa;
 	public int maxe;
@@ -25,11 +22,8 @@ public class ai : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		def = (morale * economy * army)/10000;
+		def = army * (((2 * morale) + economy)/3);
 		if (tura) {
-			morale += upmorale;
-			economy += upeconomy;
-			army += uparmy;
 			tura = false;
 		}
 	}
