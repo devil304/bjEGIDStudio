@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\ai.cs" />
+     <Compile Include="Assets\scripts\hexp.cs" />
      <Compile Include="Assets\scripts\player.cs" />
      <Compile Include="Assets\scripts\ui.cs" />
      <Compile Include="Assets\scripts\worldcontroller.cs" />
