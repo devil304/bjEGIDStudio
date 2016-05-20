@@ -23,7 +23,8 @@ public class worldcontroller : MonoBehaviour {
 			rt = false;
 		}
 		if (!pt && !rt) {
-		
+			int cont = 0;
+
 		}
 	}
 }
