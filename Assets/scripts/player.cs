@@ -10,6 +10,10 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (wc.pt && wc.rt) {
+			if (Input.GetButtonDown ("Jump")) {
+				wc.pt = false;
+			}
+		}
 	}
 }
