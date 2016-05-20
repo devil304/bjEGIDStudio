@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/gex.unity
-  isLoaded: 1
-  isActive: 1
