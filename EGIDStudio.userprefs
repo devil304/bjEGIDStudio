@@ -1,10 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\hexp.cs">
     <Files>
       <File FileName="Assets\scripts\worldcontroller.cs" Line="33" Column="16" />
       <File FileName="Assets\scripts\player.cs" Line="14" Column="18" />
       <File FileName="Assets\scripts\hexp.cs" Line="5" Column="33" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\CameraMovement.cs">
+    <Files>
+      <File FileName="Assets\scripts\CameraMovement.cs" Line="31" Column="38" />
+>>>>>>> 706490448723d00e19c884fce70c455894fbbe16
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
