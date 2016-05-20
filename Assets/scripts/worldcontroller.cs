@@ -5,6 +5,7 @@ public class worldcontroller : MonoBehaviour {
 	public ai[] ais;
 	public bool pt = true;
 	public bool rt = true;
+	public int tc = 1;
 	// Use this for initialization
 	void Start () {
 		GameObject[] enemys = GameObject.FindGameObjectsWithTag ("enemy");
@@ -30,6 +31,8 @@ public class worldcontroller : MonoBehaviour {
 				}
 				if (cont >= ais.Length) {
 					pt = true;
+					rt = true;
+					tc++;
 				}
 			}
 		}
