@@ -31,16 +31,32 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		activehep = 1;
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
-			int counth = 0;
+			activehep = 1;
+			phexas = new GameObject[0];
 			for (int i = 0; i < hexas.Length; i++) {
 				if (hexas [i].tag == "hex" && hexas [i].name == "player") {
-
+					GameObject[] tmpgo = new GameObject[1];
+					if (phexas.Length != 0) {
+						tmpgo = new GameObject[phexas.Length];
+						tmpgo = phexas;
+						phexas = new GameObject[phexas.Length + 1];
+					} else {
+						phexas = new GameObject[1];
+					}
+					if (phexas.Length > 1) {
+						for(int x = 0;x<tmpgo.Length;x++){
+							phexas[x] = tmpgo[x];
+						}
+					}
+					phexas [phexas.Length - 1] = hexas [i];
+					if (hexas [i].GetComponent<hexp> ().lud < hexas [i].GetComponent<hexp> ().maxlud) {
+						activehep++;
+					}
 				}
 			}
-			hep = phexas.Length;
+			hep = phexas.Length + 1;
 			wc.rt = true;
 		}
 		if (wc.pt && wc.rt) {
