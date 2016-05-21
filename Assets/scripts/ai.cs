@@ -25,11 +25,14 @@ public class ai : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
 		army = Random.Range (mina, maxa);
+		string my = "(";
+		char mc = my[0];
+		string[] ssize = this.name.Split(mc);
+		this.name = ssize[0];
 	}
 	
 	// Update is called once per frame

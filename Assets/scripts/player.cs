@@ -22,6 +22,7 @@ public class player : MonoBehaviour {
 	public worldcontroller wc;
 	// Use this for initialization
 	void Start () {
+		this.name = "Player";
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
 		army = Random.Range (mina, maxa);
