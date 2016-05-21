@@ -49,6 +49,7 @@
      <Compile Include="Assets\scripts\ai.cs" />
      <Compile Include="Assets\scripts\buttonrec.cs" />
      <Compile Include="Assets\scripts\dymek.cs" />
+     <Compile Include="Assets\scripts\dymekdane.cs" />
      <Compile Include="Assets\scripts\hexgen.cs" />
      <Compile Include="Assets\scripts\hexp.cs" />
      <Compile Include="Assets\scripts\hg.cs" />
