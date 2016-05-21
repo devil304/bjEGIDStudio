@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\worldcontroller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\player.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\scripts\ai.cs" Line="40" Column="14" />
       <File FileName="Assets\scripts\worldcontroller.cs" Line="58" Column="11" />
       <File FileName="Assets\scripts\dymekdane.cs" Line="35" Column="145" />
@@ -9,6 +10,9 @@
       <File FileName="Assets\scripts\player.cs" Line="96" Column="24" />
       <File FileName="Assets\scripts\CameraMovement.cs" Line="27" Column="41" />
       <File FileName="Assets\scripts\buttonrec.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\scripts\player.cs" Line="39" Column="1" />
+>>>>>>> 44ffc3e61ad33c4df3aab7fa0aa66b980e6bfa57
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
