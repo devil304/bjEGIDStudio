@@ -11,7 +11,7 @@ public class worldcontroller : MonoBehaviour {
 	public GameObject dymkikuwanow;
 	// Use this for initialization
 	void Start () {
-		
+		hexys = GameObject.FindGameObjectsWithTag ("hex");		
 	}
 	
 	// Update is called once per frame

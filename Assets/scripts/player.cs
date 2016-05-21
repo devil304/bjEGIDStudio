@@ -20,6 +20,8 @@ public class player : MonoBehaviour {
 	public GameObject[] phexas;
 	// Use this for initialization
 	public worldcontroller wc;
+	public Color myc;
+	public string myn;
 	// Use this for initialization
 	void Start () {
 		this.name = "Player";
@@ -28,6 +30,11 @@ public class player : MonoBehaviour {
 		army = Random.Range (mina, maxa);
 		hexas = GameObject.FindGameObjectsWithTag ("hex");
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller>();
+		for (int i = 0; i < wc.hexys.Length; i++) {
+			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc);
+			}
+		}
 	}
 	
 	// Update is called once per frame
