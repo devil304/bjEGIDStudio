@@ -23,6 +23,7 @@ public class ai : MonoBehaviour {
 	public bool tura = false;
 	// Use this for initialization
 	void Start () {
+		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
 		army = Random.Range (mina, maxa);
