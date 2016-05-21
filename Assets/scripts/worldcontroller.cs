@@ -12,6 +12,7 @@ public class worldcontroller : MonoBehaviour {
 	void Start () {
 		
 		GameObject[] enemys = GameObject.FindGameObjectsWithTag ("Menemy");
+		play = GameObject.FindGameObjectWithTag ("player");
 		ais = new ai[enemys.Length];
 		for (int i = 0; i < enemys.Length; i++) {
 				ais [i] = enemys [i].GetComponent<ai> ();
