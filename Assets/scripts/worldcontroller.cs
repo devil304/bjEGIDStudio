@@ -34,6 +34,10 @@ public class worldcontroller : MonoBehaviour {
 	}
 	void Update () {
 		if (!pt && rt) {
+			uk = GameObject.Find ("nick");
+			uk.GetComponent<Text>().text = "Komputer";
+			u = GameObject.Find ("tura").GetComponent<ui> ();
+			u.zmienna = tc.ToString();
 			for (int i = 0; i < ais.Length; i++) {
 				ais [i].tura = true;
 			}
@@ -42,16 +46,16 @@ public class worldcontroller : MonoBehaviour {
 		if (!pt && !rt) {
 			int cont = 0;
 			for (int i = 0; i < ais.Length; i++) {
-				if (ais [i].tura) {
+				if (!ais [i].tura) {
 					cont++;
 				}
 				if (cont >= ais.Length) {
 					pt = true;
-					uk = GameObject.Find ("koniec");
+					uk = GameObject.Find ("nick");
 					uk.GetComponent<Text>().text = "Gracz";
-					tc++;
 					u = GameObject.Find ("tura").GetComponent<ui> ();
 					u.zmienna = tc.ToString();
+					tc++;
 				}
 			}
 		}
