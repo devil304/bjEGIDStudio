@@ -14,7 +14,7 @@ public class dymekdane : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hxp = transform.parent.GetComponent<hexp> ();
-		pp = GameObject.Find ("Player");
+		pp = GameObject.Find ("Player").GetComponent<player>();
 	}
 	
 	// Update is called once per frame
