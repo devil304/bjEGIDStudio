@@ -9,6 +9,7 @@ public class hexp : MonoBehaviour {
 	public GameObject ow;
 	public int x;
 	public int y;
+	public float costr;
 	void Start(){
 		morale = Random.Range(1,10);
 		economy = Random.Range(1,10);
@@ -16,6 +17,7 @@ public class hexp : MonoBehaviour {
 		while(lud > maxlud){
 			lud = Random.Range(1,10);
 		}
+		costr = (morale + economy + maxlud + lud);
 	}
 	public void Przejecie(string nazw,Color nc,GameObject owner){
 		this.gameObject.name = nazw;

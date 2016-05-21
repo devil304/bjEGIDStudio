@@ -71,7 +71,7 @@ public class player : MonoBehaviour {
 				}
 			}
 			hep = phexas.Length + 1;
-			economy += (actlud / 25) * (economy / 100);
+			economy += (actlud / 25) * (economy / 100) * morale / 20;
 			if (actlud >= maxactlud) {
 				actlud = maxactlud;
 				if (morale > 0) {
