@@ -8,6 +8,7 @@ public class worldcontroller : MonoBehaviour {
 	public int tc = 1;
 	public GameObject[] hexys;
 	public GameObject play;
+	public GameObject dymkikuwanow;
 	// Use this for initialization
 	void Start () {
 		
