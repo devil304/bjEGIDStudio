@@ -7,9 +7,11 @@ public class zoom : MonoBehaviour {
 	public float spz;
 	public float maxup;
 	public float sup;
+	public GameObject puf;
 	// Use this for initialization
 	void Start () {
 		spz = transform.position.z;
+		puf = this.transform.GetChild (0).gameObject;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +31,7 @@ public class zoom : MonoBehaviour {
 		mo = true;
 		if (this.transform.position.z > spz - maxup) {
 			Transform to = this.transform;
-			to.Translate(Vector3.back * tim * sup);
+			to.Translate (Vector3.back * tim * sup);
 		}
 	}
 }
