@@ -36,7 +36,7 @@ public class player : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < u.Length; i++) {
 			if (i == 0) {
-				u [i] = GameObject.Find ("ludnosc").GetComponent<ui> ();
+				u [i] = GameObject.Find ("populacja").GetComponent<ui> ();
 				u [i].zmienna = actlud.ToString();
 			}else if (i == 1) {
 				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
