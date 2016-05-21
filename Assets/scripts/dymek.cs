@@ -5,6 +5,7 @@ using System.Collections;
 public class dymek : MonoBehaviour {
 	
 	public GameObject puf;
+
 	// Use this for initialization
 	void Start () {
 		puf = GameObject.Find ("dymek");
@@ -13,7 +14,7 @@ public class dymek : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 	void OnMouseDown(){
 		puf.SetActive (true);
