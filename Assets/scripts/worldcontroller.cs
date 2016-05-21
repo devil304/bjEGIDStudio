@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class worldcontroller : MonoBehaviour {
 	public ai[] ais;
@@ -7,6 +8,7 @@ public class worldcontroller : MonoBehaviour {
 	public bool rt = false	;
 	public int tc = 1;
 	public ui u;
+	public GameObject uk;
 	public int tur;
 	public GameObject[] hexys;
 	public GameObject play;
@@ -45,6 +47,8 @@ public class worldcontroller : MonoBehaviour {
 				}
 				if (cont >= ais.Length) {
 					pt = true;
+					uk = GameObject.Find ("koniec");
+					uk.GetComponent<Text>().text = "Gracz";
 					tc++;
 					u = GameObject.Find ("tura").GetComponent<ui> ();
 					u.zmienna = tc.ToString();
