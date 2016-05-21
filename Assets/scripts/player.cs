@@ -9,7 +9,7 @@ public class player : MonoBehaviour {
 	public float army;
 	public int hep;
 	public int activehep;
-	public int actlud;
+	public float actlud;
 	public float maxactlud;
 	public GameObject moje;
 	public GameObject[] hexas;
@@ -36,13 +36,13 @@ public class player : MonoBehaviour {
 		for (int i = 0; i < u.Length; i++) {
 			if (i == 0) {
 				u [i] = GameObject.Find ("populacja").GetComponent<ui> ();
-				u [i].zmienna = (int)actlud.ToString();
+				u [i].zmienna = ((int)actlud).ToString();
 			}else if (i == 1) {
 				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
-				u [i].zmienna = (int)economy.ToString();
+				u [i].zmienna = ((int)economy).ToString();
 			}else if (i == 2) {
 				u [i] = GameObject.Find ("pop").GetComponent<ui> ();
-				u [i].zmienna = (int)morale.ToString();
+				u [i].zmienna = ((int)morale).ToString();
 			}
 		}
 		def = army * (((2 * morale) + economy)/3);
