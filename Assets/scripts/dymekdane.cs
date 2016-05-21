@@ -13,9 +13,9 @@ public class dymekdane : MonoBehaviour {
 	public player pp;
 	// Use this for initialization
 	void Start () {
-		d1 = GameObject.Find ("morale");
-		d2 = GameObject.Find ("ekonomia");
-		d3 = GameObject.Find ("ludnosc");
+		d1 = GameObject.Find ("morale").GetComponent<Text> ();
+		d2 = GameObject.Find ("ekonomia").GetComponent<Text> ();
+		d3 = GameObject.Find ("ludnosc").GetComponent<Text> ();
 		hxp = transform.parent.GetComponent<hexp> ();
 		pp = GameObject.Find ("Player").GetComponent<player>();
 	}
