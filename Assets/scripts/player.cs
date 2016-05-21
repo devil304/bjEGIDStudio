@@ -71,16 +71,23 @@ public class player : MonoBehaviour {
 				}
 			}
 			hep = phexas.Length + 1;
+			economy += (actlud / 25) * (economy / 100);
 			if (actlud >= maxactlud) {
 				actlud = maxactlud;
 				if (morale > 0) {
 					morale -= actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
 				} else {
 					morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+					actlud += actlud * (5F / 100F) * (morale / 50F);
 				}
 			} else {
 				actlud += actlud * (5F / 100F) * (morale / 50F);
 			}
+			if (morale <= 0){
+				morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+				actlud += actlud * (5F / 100F) * (morale / 10F);
+			}
+			morale -= army / 100;
 			wc.rt = true;
 		}
 	}
