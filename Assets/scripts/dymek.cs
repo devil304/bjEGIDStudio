@@ -17,9 +17,6 @@ public class dymek : MonoBehaviour {
 
 	}
 	void OnMouseDown(){
-		puf.SetActive (true);
+		puf.SetActive (!puf.activeSelf);
 		}
-	void OnMouseExit(){
-		puf.SetActive (false);
-}
 }

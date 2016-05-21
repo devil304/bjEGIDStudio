@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ai : MonoBehaviour {
@@ -22,7 +23,9 @@ public class ai : MonoBehaviour {
 	public worldcontroller wc;
 	public bool tura = false;
 	// Use this for initialization
+
 	void Start () {
+
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
@@ -33,7 +36,7 @@ public class ai : MonoBehaviour {
 	void Update () {
 		def = army * (((2 * morale) + economy)/3);
 		if (tura) {
-			tura = false;
+			//tura = false;
 			if (wc.pt && !wc.rt) {
 				activehep = 1;
 				phexas = new GameObject[0];
@@ -59,12 +62,6 @@ public class ai : MonoBehaviour {
 					}
 				}
 				hep = phexas.Length + 1;
-				wc.rt = true;
-			}
-			if (wc.pt && wc.rt) {
-				if (Input.GetButtonDown ("Jump")) {
-					wc.pt = false;
-				}
 			}
 		}
 	}
