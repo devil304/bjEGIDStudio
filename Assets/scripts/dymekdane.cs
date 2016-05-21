@@ -26,7 +26,7 @@ public class dymekdane : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		cos = pp.hexas.Length * hxp.costr;
+		cos = pp.hexas.Length * (hxp.costr/100);
 		d5.text = cos.ToString ();
 	}
 	public void kup(){
