@@ -6,8 +6,11 @@ public class worldcontroller : MonoBehaviour {
 	public bool pt = true;
 	public bool rt = false	;
 	public int tc = 1;
+	public GameObject[] hexys;
+	public GameObject play;
 	// Use this for initialization
 	void Start () {
+		
 		GameObject[] enemys = GameObject.FindGameObjectsWithTag ("enemy");
 		ais = new ai[enemys.Length];
 		for (int i = 0; i < enemys.Length; i++) {
