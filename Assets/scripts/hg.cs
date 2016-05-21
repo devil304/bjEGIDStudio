@@ -41,7 +41,7 @@ public class hg : MonoBehaviour {
 		if (i%50< 4 && takx) {
 			if (!GameObject.Find (gracze [i % 50].name) && !GameObject.FindGameObjectWithTag ("player")) {
 				Instantiate (gracze [i % 50], this.transform.position, gracze [i % 50].transform.rotation);
-				Przejecie (nazwa [i % 50], cr [i % 50]);
+				this.GetComponent<hexp>().Przejecie (nazwa [i % 50], cr [i % 50]);
 			}
 		}
 	}
@@ -79,16 +79,12 @@ public class hg : MonoBehaviour {
 		if (i%50< 4 && takx) {
 			if (!GameObject.Find (gracze [i % 50].name) && !GameObject.FindGameObjectWithTag ("player")) {
 				Instantiate (gracze [i % 50], this.transform.position, gracze [i % 50].transform.rotation);
-				Przejecie (nazwa [i % 50], cr [i % 50]);
+				this.GetComponent<hexp>().Przejecie (nazwa [i % 50], cr [i % 50]);
 			}
 		}
 		Destroy (this);
 	}
 	void OnMouseDown(){
 
-	}
-	void Przejecie(string nazw,Color nc){
-		this.gameObject.name = nazw;
-		this.transform.GetChild (0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer> ().color = nc;
 	}
 }
