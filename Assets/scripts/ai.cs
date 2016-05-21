@@ -7,16 +7,10 @@ public class ai : MonoBehaviour {
 	public float morale;
 	public float economy;
 	public float army;
-	public int maxm;
-	public int maxa;
-	public int maxe;
-	public int minm;
-	public int mina;
-	public int mine;
 	public int hep;
 	public int activehep;
-	public int actlud;
-	public int maxactlud;
+	public float actlud;
+	public float maxactlud;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
 	// Use this for initialization
@@ -28,16 +22,13 @@ public class ai : MonoBehaviour {
 
 	void Start () {
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
-		morale = Random.Range (minm, maxm);
-		economy = Random.Range (mine, maxe);
-		army = Random.Range (mina, maxa);
 		string my = "(";
 		char mc = my[0];
 		string[] ssize = this.name.Split(mc);
 		this.name = ssize[0];
 		for (int i = 0; i < wc.hexys.Length; i++) {
 			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
-				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc);
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc,this.gameObject);
 			}
 		}
 	}
@@ -74,5 +65,11 @@ public class ai : MonoBehaviour {
 				hep = phexas.Length + 1;
 			}
 		}
+	}
+	public void add(float[] jej){
+		morale += jej[0];
+		actlud += jej[1];
+		maxactlud += jej[2];
+		economy += jej[3];
 	}
 }

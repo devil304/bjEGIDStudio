@@ -1,16 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\dymek.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\hg.cs">
     <Files>
-      <File FileName="Assets\scripts\worldcontroller.cs" Line="31" Column="18" />
-      <File FileName="Assets\scripts\buttonrec.cs" Line="9" Column="36" />
+      <File FileName="Assets\scripts\hexp.cs" Line="28" Column="1" />
+      <File FileName="Assets\scripts\player.cs" Line="51" Column="31" />
+      <File FileName="Assets\scripts\ai.cs" Line="13" Column="14" />
+      <File FileName="Assets\scripts\hg.cs" Line="82" Column="95" />
+      <File FileName="Assets\scripts\worldcontroller.cs" Line="14" Column="50" />
+      <File FileName="Assets\scripts\buttonrec.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\zoom.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\player.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\hexp.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ai.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\hexgen.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\dymek.cs" Line="26" Column="26" />
-      <File FileName="Assets\scripts\hg.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\dymek.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

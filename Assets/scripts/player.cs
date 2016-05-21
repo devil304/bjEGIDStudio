@@ -7,16 +7,11 @@ public class player : MonoBehaviour {
 	public float morale;
 	public float economy;
 	public float army;
-	public int maxm;
-	public int maxa;
-	public int maxe;
-	public int minm;
-	public int mina;
-	public int mine;
 	public int hep;
 	public int activehep;
-	public int actlud;
-	public int maxactlud;
+	public float actlud;
+	public float maxactlud;
+	public GameObject moje;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
 	// Use this for initialization
@@ -26,16 +21,14 @@ public class player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.name = "Player";
-		morale = Random.Range (minm, maxm);
-		economy = Random.Range (mine, maxe);
-		army = Random.Range (mina, maxa);
 		hexas = GameObject.FindGameObjectsWithTag ("hex");
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller>();
 		for (int i = 0; i < wc.hexys.Length; i++) {
 			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
-				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc);
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc,this.gameObject);
 			}
 		}
+
 	}
 	
 	// Update is called once per frame
@@ -85,5 +78,11 @@ public class player : MonoBehaviour {
 		if (wc.pt && wc.rt) {
 				wc.pt = false;
 		}
+	}
+	public void add(float[] jej){
+		morale += jej[0];
+		actlud += jej[1];
+		maxactlud += jej[2];
+		economy += jej[3];
 	}
 }
