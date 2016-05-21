@@ -8,19 +8,25 @@ public class worldcontroller : MonoBehaviour {
 	public int tc = 1;
 	public GameObject[] hexys;
 	public GameObject play;
+	public float sec;
 	// Use this for initialization
 	void Start () {
 		
-		GameObject[] enemys = GameObject.FindGameObjectsWithTag ("Menemy");
-		play = GameObject.FindGameObjectWithTag ("player");
-		ais = new ai[enemys.Length];
-		for (int i = 0; i < enemys.Length; i++) {
-				ais [i] = enemys [i].GetComponent<ai> ();
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (ais.Length < 3 || !play || ais.Length >= 4) {
+			GameObject[] enemys = GameObject.FindGameObjectsWithTag ("Menemy");
+			play = GameObject.FindGameObjectWithTag ("player");
+			ais = new ai[enemys.Length];
+			for (int i = 0; i < enemys.Length; i++) {
+				ais [i] = enemys [i].GetComponent<ai> ();
+			}
+			if (ais.Length < 3 || !play || ais.Length >= 4) {
+				Application.LoadLevel (Application.loadedLevel);
+			}
+		}
 		if (!pt && rt) {
 			for (int i = 0; i < ais.Length; i++) {
 				ais [i].tura = true;
@@ -39,5 +45,6 @@ public class worldcontroller : MonoBehaviour {
 				}
 			}
 		}
+		sec += Time.deltaTime;
 	}
 }
