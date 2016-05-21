@@ -31,7 +31,7 @@ public class dymekdane : MonoBehaviour {
 	}
 	public void kup(){
 		if (cos < pp.GetComponent<player> ().economy) {
-			pp.GetComponent<player> ().economy -= cos / 4;
+			pp.GetComponent<player> ().economy -= cos;
 			this.transform.parent.gameObject.GetComponent<hexp> ().Przejecie (pp.GetComponent<player> ().myn,pp.GetComponent<player> ().myc,pp.gameObject);
 		}
 	}
