@@ -2,15 +2,34 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\hg.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\scripts\hexp.cs" Line="28" Column="1" />
       <File FileName="Assets\scripts\player.cs" Line="51" Column="31" />
       <File FileName="Assets\scripts\ai.cs" Line="13" Column="14" />
       <File FileName="Assets\scripts\hg.cs" Line="82" Column="95" />
       <File FileName="Assets\scripts\worldcontroller.cs" Line="14" Column="50" />
       <File FileName="Assets\scripts\buttonrec.cs" Line="1" Column="1" />
+=======
+<<<<<<< HEAD
+      <File FileName="Assets\scripts\ai.cs" Line="62" Column="7" />
+      <File FileName="Assets\scripts\player.cs" Line="31" Column="2" />
+      <File FileName="Assets\scripts\dymek.cs" Line="21" Column="4" />
+      <File FileName="Assets\scripts\zoom.cs" Line="28" Column="24" />
+      <File FileName="Assets\scripts\worldcontroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\ui.cs" Line="15" Column="3" />
+=======
+      <File FileName="Assets\scripts\worldcontroller.cs" Line="31" Column="18" />
+      <File FileName="Assets\scripts\buttonrec.cs" Line="9" Column="36" />
+>>>>>>> d1787d69610afe3b3dfa799ccd8447f992a92b7c
       <File FileName="Assets\scripts\zoom.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\hexgen.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\scripts\dymek.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\scripts\dymek.cs" Line="26" Column="26" />
+      <File FileName="Assets\scripts\hg.cs" Line="1" Column="1" />
+>>>>>>> 7545f687436e2d30a935c93e35d66f3b5dadff6e
+>>>>>>> d1787d69610afe3b3dfa799ccd8447f992a92b7c
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

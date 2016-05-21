@@ -6,6 +6,8 @@ public class worldcontroller : MonoBehaviour {
 	public bool pt = true;
 	public bool rt = false	;
 	public int tc = 1;
+	public ui u;
+	public int tur;
 	public GameObject[] hexys;
 	public GameObject play;
 	public GameObject dymkikuwanow;
@@ -44,6 +46,8 @@ public class worldcontroller : MonoBehaviour {
 				if (cont >= ais.Length) {
 					pt = true;
 					tc++;
+					u = GameObject.Find ("tura").GetComponent<ui> ();
+					u.zmienna = tc.ToString();
 				}
 			}
 		}
