@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour {
 		transform.Translate(0, 0, scroll * zoomSpeed, Space.World);
 		if (transform.position.z < maxZ && transform.position.z > minZ) {
 			minY -= scroll * korekta * (minY/10);
-			minX -= scroll * korekta * (minX / 10);
+			minX -= scroll * korekta * (minX / 12);
 			maxY += scroll * korekta * (maxY/20);
 			maxX += scroll * korekta * (maxX/21);
 		}
