@@ -21,4 +21,7 @@ public class hexp : MonoBehaviour {
 	void Update () {
 		
 	}
+	void OnMouseDown(){
+		
+	}
 }
