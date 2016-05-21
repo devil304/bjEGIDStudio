@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class player : MonoBehaviour {
+	public ui[] u;
 	public float def;
 	public float morale;
 	public float economy;
@@ -39,6 +40,18 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < u.Length; i++) {
+			if (i == 0) {
+				u [i] = GameObject.Find ("ludnosc").GetComponent<ui> ();
+				u [i].zmienna = actlud.ToString();
+			}else if (i == 1) {
+				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
+				u [i].zmienna = economy.ToString();
+			}else if (i == 2) {
+				u [i] = GameObject.Find ("pop").GetComponent<ui> ();
+				u [i].zmienna = morale.ToString();
+			}
+		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
 			activehep = 1;
