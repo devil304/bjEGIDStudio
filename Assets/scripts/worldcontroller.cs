@@ -8,18 +8,26 @@ public class worldcontroller : MonoBehaviour {
 	public int tc = 1;
 	public GameObject[] hexys;
 	public GameObject play;
+	public GameObject dymkikuwanow;
 	// Use this for initialization
 	void Start () {
-		
-		GameObject[] enemys = GameObject.FindGameObjectsWithTag ("Menemy");
-		play = GameObject.FindGameObjectWithTag ("player");
-		ais = new ai[enemys.Length];
-		for (int i = 0; i < enemys.Length; i++) {
-				ais [i] = enemys [i].GetComponent<ai> ();
-		}
+		hexys = GameObject.FindGameObjectsWithTag ("hex");		
 	}
 	
 	// Update is called once per frame
+	void FixedUpdate(){
+		if (ais.Length < 3 || !play || ais.Length >= 4) {
+			GameObject[] enemys = GameObject.FindGameObjectsWithTag ("Menemy");
+			play = GameObject.FindGameObjectWithTag ("player");
+			ais = new ai[enemys.Length];
+			for (int i = 0; i < enemys.Length; i++) {
+				ais [i] = enemys [i].GetComponent<ai> ();
+			}
+			if (ais.Length < 3 || !play || ais.Length >= 4) {
+				Application.LoadLevel (Application.loadedLevel);
+			}
+		}
+	}
 	void Update () {
 		if (!pt && rt) {
 			for (int i = 0; i < ais.Length; i++) {

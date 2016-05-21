@@ -22,14 +22,24 @@ public class ai : MonoBehaviour {
 	// Use this for initialization
 	public worldcontroller wc;
 	public bool tura = false;
+	public Color myc;
+	public string myn;
 	// Use this for initialization
 
 	void Start () {
-
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
 		army = Random.Range (mina, maxa);
+		string my = "(";
+		char mc = my[0];
+		string[] ssize = this.name.Split(mc);
+		this.name = ssize[0];
+		for (int i = 0; i < wc.hexys.Length; i++) {
+			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc);
+			}
+		}
 	}
 	
 	// Update is called once per frame

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class player : MonoBehaviour {
+	public ui[] u;
 	public float def;
 	public float morale;
 	public float economy;
@@ -20,17 +21,37 @@ public class player : MonoBehaviour {
 	public GameObject[] phexas;
 	// Use this for initialization
 	public worldcontroller wc;
+	public Color myc;
+	public string myn;
 	// Use this for initialization
 	void Start () {
+		this.name = "Player";
 		morale = Random.Range (minm, maxm);
 		economy = Random.Range (mine, maxe);
 		army = Random.Range (mina, maxa);
 		hexas = GameObject.FindGameObjectsWithTag ("hex");
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller>();
+		for (int i = 0; i < wc.hexys.Length; i++) {
+			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc);
+			}
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < u.Length; i++) {
+			if (i == 0) {
+				u [i] = GameObject.Find ("ludnosc").GetComponent<ui> ();
+				u [i].zmienna = actlud.ToString();
+			}else if (i == 1) {
+				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
+				u [i].zmienna = economy.ToString();
+			}else if (i == 2) {
+				u [i] = GameObject.Find ("pop").GetComponent<ui> ();
+				u [i].zmienna = morale.ToString();
+			}
+		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
 			activehep = 1;

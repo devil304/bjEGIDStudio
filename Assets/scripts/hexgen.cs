@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class hexgen : MonoBehaviour {
 	public Transform spawnThis;   
 
 	public int x = 5;
 	public int y = 5;
-
+	public GameObject tmp;
 	public float radius = 0.5f;
 	public bool useAsInnerCircleRadius = true;
 
@@ -22,7 +23,13 @@ public class hexgen : MonoBehaviour {
 			for( int j = 0; j < y; j++ ) {
 				Vector2 hexpos = HexOffset( i, j );
 				Vector3 pos = new Vector3( hexpos.x, hexpos.y, 0 );
-				Instantiate(spawnThis, pos, Quaternion.identity );
+				tmp = Instantiate(spawnThis).gameObject;
+				tmp.transform.position = pos;
+				tmp.transform.rotation = Quaternion.identity;
+				if (tmp.GetComponent<hexp> ()) {
+					tmp.GetComponent<hexp> ().x = i;
+					tmp.GetComponent<hexp> ().y = j;
+				}
 			}
 		}
 	}
