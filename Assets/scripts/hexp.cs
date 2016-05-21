@@ -5,23 +5,27 @@ public class hexp : MonoBehaviour {
 	public float morale;
 	public float economy;
 	public float maxlud;
-	public float lud;
-	public GameObject up;
-	public GameObject down;
-	public GameObject upleft;
-	public GameObject upright;
-	public GameObject downright;
-	public GameObject downleft;
-	// Use this for initialization
-	void Start () {
-		
+	public float lud = 1000000;
+	public GameObject ow;
+	public int x;
+	public int y;
+	void Start(){
+		morale = Random.Range(1,10);
+		economy = Random.Range(1,10);
+		maxlud = Random.Range(1,10);
+		while(lud > maxlud){
+			lud = Random.Range(1,10);
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	void OnMouseDown(){
-		
+	public void Przejecie(string nazw,Color nc,GameObject owner){
+		this.gameObject.name = nazw;
+		this.transform.GetChild (0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer> ().color = nc;
+		ow = owner;
+		float[] tmpx = new float[4];
+		tmpx [0] = morale;
+		tmpx [1] = lud;
+		tmpx [2] = maxlud;
+		tmpx [3] = economy;
+		owner.SendMessage("add",tmpx);
 	}
 }

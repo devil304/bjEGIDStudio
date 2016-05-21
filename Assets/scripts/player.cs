@@ -2,35 +2,49 @@
 using System.Collections;
 
 public class player : MonoBehaviour {
+	public ui[] u;
 	public float def;
 	public float morale;
 	public float economy;
 	public float army;
-	public int maxm;
-	public int maxa;
-	public int maxe;
-	public int minm;
-	public int mina;
-	public int mine;
 	public int hep;
 	public int activehep;
-	public int actlud;
-	public int maxactlud;
+	public float actlud;
+	public float maxactlud;
+	public GameObject moje;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
 	// Use this for initialization
 	public worldcontroller wc;
+	public Color myc;
+	public string myn;
 	// Use this for initialization
 	void Start () {
-		morale = Random.Range (minm, maxm);
-		economy = Random.Range (mine, maxe);
-		army = Random.Range (mina, maxa);
+		this.name = "Player";
 		hexas = GameObject.FindGameObjectsWithTag ("hex");
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller>();
+		for (int i = 0; i < wc.hexys.Length; i++) {
+			if (Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) <= 25F && Vector2.Distance (wc.hexys [i].transform.position, this.transform.position) > 5F) {
+				wc.hexys [i].gameObject.GetComponent<hexp> ().Przejecie (myn,myc,this.gameObject);
+			}
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < u.Length; i++) {
+			if (i == 0) {
+				u [i] = GameObject.Find ("ludnosc").GetComponent<ui> ();
+				u [i].zmienna = actlud.ToString();
+			}else if (i == 1) {
+				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
+				u [i].zmienna = economy.ToString();
+			}else if (i == 2) {
+				u [i] = GameObject.Find ("pop").GetComponent<ui> ();
+				u [i].zmienna = morale.ToString();
+			}
+		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
 			activehep = 1;
@@ -59,10 +73,16 @@ public class player : MonoBehaviour {
 			hep = phexas.Length + 1;
 			wc.rt = true;
 		}
+	}
+	public void turab (){
 		if (wc.pt && wc.rt) {
-			if (Input.GetButtonDown ("Jump")) {
 				wc.pt = false;
-			}
 		}
+	}
+	public void add(float[] jej){
+		morale += jej[0];
+		actlud += jej[1];
+		maxactlud += jej[2];
+		economy += jej[3];
 	}
 }
