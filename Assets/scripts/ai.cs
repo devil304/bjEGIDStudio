@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading;
 
 public class ai : MonoBehaviour {
 	public float def;
@@ -9,8 +10,8 @@ public class ai : MonoBehaviour {
 	public float army;
 	public int hep;
 	public int activehep;
-	public float acl;
-	public float maxacl;
+	public float actlud;
+	public float maxactlud;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
 	// Use this for initialization
@@ -37,7 +38,7 @@ public class ai : MonoBehaviour {
 	void Update () {
 		def = army * (((2 * morale) + economy)/3);
 		if (tura) {
-			//tura = false;
+			tura = false;
 			if (wc.pt && !wc.rt) {
 				activehep = 1;
 				phexas = new GameObject[0];
@@ -68,8 +69,8 @@ public class ai : MonoBehaviour {
 	}
 	public void add(float[] jej){
 		morale += jej[0];
-		acl += jej[1];
-		maxacl += jej[2];
+		actlud += jej[1];
+		maxactlud += jej[2];
 		economy += jej[3];
 	}
 }
