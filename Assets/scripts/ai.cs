@@ -9,8 +9,8 @@ public class ai : MonoBehaviour {
 	public float army;
 	public int hep;
 	public int activehep;
-	public float actlud;
-	public float maxactlud;
+	public float acl;
+	public float maxacl;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
 	// Use this for initialization
@@ -68,8 +68,8 @@ public class ai : MonoBehaviour {
 	}
 	public void add(float[] jej){
 		morale += jej[0];
-		actlud += jej[1];
-		maxactlud += jej[2];
+		acl += jej[1];
+		maxacl += jej[2];
 		economy += jej[3];
 	}
 }

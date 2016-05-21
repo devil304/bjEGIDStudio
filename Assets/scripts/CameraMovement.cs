@@ -16,11 +16,18 @@ public class CameraMovement : MonoBehaviour {
 
 	public float sensX = 10.0f;
 	public float sensY = 10.0f;
+	public float korekta;
 
 	void Update () {
 
 		float scroll = Input.GetAxis("Mouse ScrollWheel");
 		transform.Translate(0, 0, scroll * zoomSpeed, Space.World);
+		if (transform.position.z < maxZ && transform.position.z > minZ) {
+			minY -= scroll * korekta * (minY/10);
+			minX -= scroll * korekta * (minX / 12);
+			maxY += scroll * korekta * (maxY/20);
+			maxX += scroll * korekta * (maxX/21);
+		}
 	
 		if (transform.position.z > maxZ) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y, maxZ);

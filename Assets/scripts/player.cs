@@ -9,8 +9,8 @@ public class player : MonoBehaviour {
 	public float army;
 	public int hep;
 	public int activehep;
-	public float actlud;
-	public float maxactlud;
+	public int actlud;
+	public float maxacl;
 	public GameObject moje;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
@@ -18,6 +18,7 @@ public class player : MonoBehaviour {
 	public worldcontroller wc;
 	public Color myc;
 	public string myn;
+	public float acl;
 	// Use this for initialization
 	void Start () {
 		this.name = "Player";
@@ -35,7 +36,7 @@ public class player : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < u.Length; i++) {
 			if (i == 0) {
-				u [i] = GameObject.Find ("ludnosc").GetComponent<ui> ();
+				u [i] = GameObject.Find ("populacja").GetComponent<ui> ();
 				u [i].zmienna = actlud.ToString();
 			}else if (i == 1) {
 				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
@@ -71,23 +72,24 @@ public class player : MonoBehaviour {
 				}
 			}
 			hep = phexas.Length + 1;
-			economy += (actlud / 25) * (economy / 100) * morale / 20;
-			if (actlud >= maxactlud) {
-				actlud = maxactlud;
+			economy += (acl / 25) * (economy / 100) * morale / 20;
+			if (acl >= maxacl) {
+				acl = maxacl;
 				if (morale > 0) {
-					morale -= actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+					morale -= acl * (5F / 250F) + acl * (5F / 100F) * (morale / 50F);
 				} else {
-					morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
-					actlud += actlud * (5F / 100F) * (morale / 50F);
+					morale += -1 * acl * (5F / 250F) + acl * (5F / 100F) * (morale / 50F);
+					acl += acl * (5F / 100F) * (morale / 50F);
 				}
 			} else {
-				actlud += actlud * (5F / 100F) * (morale / 50F);
+				acl += acl * (5F / 100F) * (morale / 50F);
 			}
 			if (morale <= 0){
-				morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
-				actlud += actlud * (5F / 100F) * (morale / 10F);
+				morale += -1 * acl * (5F / 250F) + acl * (5F / 100F) * (morale / 50F);
+				acl += acl * (5F / 100F) * (morale / 10F);
 			}
 			morale -= army / 100;
+			actlud = (int)acl;
 			wc.rt = true;
 		}
 	}
@@ -98,8 +100,8 @@ public class player : MonoBehaviour {
 	}
 	public void add(float[] jej){
 		morale += jej[0];
-		actlud += jej[1];
-		maxactlud += jej[2];
+		acl += jej[1];
+		maxacl += jej[2];
 		economy += jej[3];
 	}
 }
