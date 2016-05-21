@@ -6,15 +6,12 @@ public class hexp : MonoBehaviour {
 	public float economy;
 	public float maxlud;
 	public float lud;
-	public GameObject up;
-	public GameObject down;
-	public GameObject upleft;
-	public GameObject upright;
-	public GameObject downright;
-	public GameObject downleft;
+	public Color[] cr;
+	public string[] nazwa;
 	// Use this for initialization
 	void Start () {
-		
+		int i = Random.Range (0, 4);
+		Przejecie (nazwa [i], cr [i]);
 	}
 	
 	// Update is called once per frame
@@ -23,5 +20,9 @@ public class hexp : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		
+	}
+	void Przejecie(string nazw,Color nc){
+		this.gameObject.name = nazw;
+		this.transform.GetChild (0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer> ().color = nc;
 	}
 }

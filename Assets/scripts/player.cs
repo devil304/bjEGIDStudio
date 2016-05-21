@@ -59,10 +59,10 @@ public class player : MonoBehaviour {
 			hep = phexas.Length + 1;
 			wc.rt = true;
 		}
+	}
+	public void turab (){
 		if (wc.pt && wc.rt) {
-			if (Input.GetButtonDown ("Jump")) {
 				wc.pt = false;
-			}
 		}
 	}
 }
