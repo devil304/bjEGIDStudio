@@ -71,6 +71,16 @@ public class player : MonoBehaviour {
 				}
 			}
 			hep = phexas.Length + 1;
+			if (actlud >= maxactlud) {
+				actlud = maxactlud;
+				if (morale > 0) {
+					morale -= actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+				} else {
+					morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+				}
+			} else {
+				actlud += actlud * (5F / 100F) * (morale / 50F);
+			}
 			wc.rt = true;
 		}
 	}
