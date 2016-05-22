@@ -1,9 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\timeshift.cs">
     <Files>
       <File FileName="Assets\timeshift.cs" Line="88" Column="43" />
       <File FileName="Assets\warger.cs" Line="4" Column="38" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\player.cs">
+    <Files>
+      <File FileName="Assets\scripts\ai.cs" Line="18" Column="28" />
+      <File FileName="Assets\scripts\player.cs" Line="54" Column="42" />
+      <File FileName="Assets\scripts\dymekdane.cs" Line="32" Column="20" />
+      <File FileName="Assets\scripts\hexp.cs" Line="16" Column="29" />
+>>>>>>> 62d0f759ca1bc57fbf346895a9e9117cef7caaee
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
