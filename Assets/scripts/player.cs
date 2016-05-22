@@ -21,6 +21,7 @@ public class player : MonoBehaviour {
 	public Color myc;
 	public string myn;
 	public bool trigerrr;
+	public int lc;
 	// Use this for initialization
 	void Start () {
 		this.name = "Player";
@@ -90,6 +91,14 @@ public class player : MonoBehaviour {
 				trigerrr = false;
 			}
 			morale -= army / 100;
+			if(wc.tc > 5){
+			if (phexas.Length < 3 || actlud <= 0 || economy <= 0 || morale <= 0) {
+				Application.LoadLevel (lc);
+			}
+			if (phexas.Length > hexas.Length) {
+				Application.LoadLevel (lc+1);
+			}
+				}
 		}
 	}
 	public void turab (){

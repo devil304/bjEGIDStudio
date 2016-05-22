@@ -54,6 +54,7 @@
      <Compile Include="Assets\scripts\hexgen.cs" />
      <Compile Include="Assets\scripts\hexp.cs" />
      <Compile Include="Assets\scripts\hg.cs" />
+     <Compile Include="Assets\scripts\mdes.cs" />
      <Compile Include="Assets\scripts\nextlvl.cs" />
      <Compile Include="Assets\scripts\player.cs" />
      <Compile Include="Assets\scripts\spalsh.cs" />

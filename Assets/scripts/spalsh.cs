@@ -4,6 +4,7 @@ using System.Collections;
 public class spalsh : MonoBehaviour {
 	public float timex;
 	public float at;
+	public GameObject aa;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +14,10 @@ public class spalsh : MonoBehaviour {
 	void Update () {
 		at += Time.deltaTime;
 		if (at >= timex) {
-			Destroy(this.gameObject);
+			aa.SetActive(true);
+			Destroy (this.gameObject);
+		} else {
+			aa.SetActive(false);
 		}
 	}
 }

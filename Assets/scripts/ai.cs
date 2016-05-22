@@ -23,6 +23,7 @@ public class ai : MonoBehaviour {
 	public string myn;
 	public bool trigerrr;
 	public bool tura = false;
+	public int lc;
 	// Use this for initialization
 
 	void Start () {
