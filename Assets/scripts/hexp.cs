@@ -5,7 +5,7 @@ public class hexp : MonoBehaviour {
 	public float morale;
 	public float economy;
 	public float maxlud;
-	public float lud = 1000000;
+	public float lud;
 	public GameObject ow;
 	public int x;
 	public int y;
@@ -13,7 +13,7 @@ public class hexp : MonoBehaviour {
 	void Start(){
 		morale = Random.Range(1,10);
 		economy = Random.Range(1,10);
-		maxlud = Random.Range(1,10);
+		maxlud = Random.Range(1,12);
 		while(lud > maxlud){
 			lud = Random.Range(1,10);
 		}
@@ -25,9 +25,15 @@ public class hexp : MonoBehaviour {
 		ow = owner;
 		float[] tmpx = new float[4];
 		tmpx [0] = morale;
-		tmpx [1] = lud;
 		tmpx [2] = maxlud;
 		tmpx [3] = economy;
 		owner.SendMessage("add",tmpx);
+	}
+	public void up(){
+		lud += lud * (5F / 100F) * (morale / 50F);
+		ow.GetComponent<player> ().actlud += lud;
+		if (lud > maxlud) {
+			lud = maxlud;
+		}
 	}
 }

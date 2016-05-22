@@ -47,9 +47,11 @@ public class player : MonoBehaviour {
 		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
+			actlud = 0;
 			activehep = 1;
 			phexas = new GameObject[0];
 			for (int i = 0; i < hexas.Length; i++) {
+				hexas [i].GetComponent<hexp> ().up();
 				if (hexas [i].tag == "hex" && hexas [i].name == "player") {
 					GameObject[] tmpgo = new GameObject[1];
 					if (phexas.Length != 0) {
@@ -71,24 +73,19 @@ public class player : MonoBehaviour {
 				}
 			}
 			hep = phexas.Length + 1;
-			economy += (actlud / 25) * (economy / 100) * morale / 20;
+			economy += (actlud / 150F) * (economy / 150F) * morale / 25F;
 			if (actlud >= maxactlud) {
 				actlud = maxactlud;
 				if (morale > 0) {
-					morale -= actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
+					morale -= actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
 				} else {
-					morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
-					actlud += actlud * (5F / 100F) * (morale / 50F);
+					morale += -1 * actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
 				}
-			} else {
-				actlud += actlud * (5F / 100F) * (morale / 50F);
 			}
 			if (morale <= 0){
-				morale += -1 * actlud * (5F / 250F) + actlud * (5F / 100F) * (morale / 50F);
-				actlud += actlud * (5F / 100F) * (morale / 10F);
+				morale += -1 * actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
 			}
 			morale -= army / 100;
-			actlud = (int)actlud;
 			wc.rt = true;
 		}
 	}
@@ -99,7 +96,6 @@ public class player : MonoBehaviour {
 	}
 	public void add(float[] jej){
 		morale += jej[0];
-		actlud += jej[1];
 		maxactlud += jej[2];
 		economy += jej[3];
 	}
