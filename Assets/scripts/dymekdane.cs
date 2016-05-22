@@ -24,13 +24,17 @@ public class dymekdane : MonoBehaviour {
 		d1.text = ((int)hxp.morale).ToString ();
 		d2.text = ((int)hxp.economy).ToString ();
 		d3.text = ((int)hxp.lud).ToString ();
-//		d4.text = ((int)hxp.maxlud).ToString ();
+		d4.text = ((int)hxp.maxlud).ToString ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		cos = pp.hexas.Length * (hxp.costr/125);
 		d5.text = ((int)cos).ToString ();
+	}
+	public void pobur(){
+		pp.army += this.transform.parent.gameObject.GetComponent<hexp> ().lud * (1 / 3);
+		this.transform.parent.gameObject.GetComponent<hexp> ().lud -= this.transform.parent.gameObject.GetComponent<hexp> ().lud * (1 / 3);
 	}
 	public void kup(){
 		if (cos < pp.economy) {
