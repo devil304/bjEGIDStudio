@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour {
+	public float szpiedzy;
 	public ui[] u;
 	public float def;
 	public float morale;
@@ -37,17 +39,25 @@ public class player : MonoBehaviour {
 		for (int i = 0; i < u.Length; i++) {
 			if (i == 0) {
 				u [i] = GameObject.Find ("populacja").GetComponent<ui> ();
-				u [i].zmienna = ((int)actlud).ToString();
-			}else if (i == 1) {
+				u [i].zmienna = ((int)actlud).ToString ();
+			} else if (i == 1) {
 				u [i] = GameObject.Find ("eko").GetComponent<ui> ();
-				u [i].zmienna = ((int)economy).ToString();
-			}else if (i == 2) {
+				u [i].zmienna = ((int)economy).ToString ();
+			} else if (i == 2) {
 				u [i] = GameObject.Find ("pop").GetComponent<ui> ();
-				u [i].zmienna = ((int)morale).ToString();
+				u [i].zmienna = ((int)morale).ToString ();
 			}
 		}
+		GameObject tmpxv = GameObject.Find ("sz");
+		tmpxv.GetComponent<Text> ().text = ((int)szpiedzy).ToString();
+		GameObject tmpv = GameObject.Find ("rz");
+		tmpv.GetComponent<Text> ().text = ((int)army).ToString();
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
+			if (army <= 0) {
+				army = 0;
+			}
+			hexas = GameObject.FindGameObjectsWithTag ("hex");
 			wc.rt = true;
 			activehep = 1;
 			phexas = new GameObject[1];
@@ -73,7 +83,7 @@ public class player : MonoBehaviour {
 					phexas [l].GetComponent<hexp> ().up ();
 				}
 			}
-			economy += (actlud / 10F) * (economy / 50F) * (morale / 25F);
+			economy += (actlud / 10F) * (economy / 75F) * (morale / 25F);
 			if (actlud >= maxactlud) {
 				trigerrr = true;
 			} else {

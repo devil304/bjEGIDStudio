@@ -4,6 +4,7 @@ using System.Collections;
 using System.Threading;
 
 public class ai : MonoBehaviour {
+	public float szpiedzy;
 	public ui[] u;
 	public float def;
 	public float morale;
@@ -42,6 +43,10 @@ public class ai : MonoBehaviour {
 	void Update () {
 		def = army * (((2 * morale) + economy)/3);
 		if (tura) {
+			if (army <= 0) {
+				army = 0;
+			}
+			hexass = GameObject.FindGameObjectsWithTag ("hex");
 			tura = false;
 			activehep = 1;
 			phexas = new GameObject[1];
@@ -67,7 +72,7 @@ public class ai : MonoBehaviour {
 					phexas [l].GetComponent<hexp> ().up ();
 				}
 			}
-			economy += ((actlud / 10F) * (economy / 50F) * (morale / 25F))/wc.tc;
+			economy += ((actlud / 25F) * (economy / 100F) * (morale / 50F))/wc.tc;
 			if (actlud >= maxactlud) {
 				trigerrr = true;
 			} else {
@@ -80,7 +85,7 @@ public class ai : MonoBehaviour {
 				for(int i=0;i<hexass.Length;i++){
 					for (int j = 0; j < phexas.Length; j++) {
 						if (Vector2.Distance (hexass[i].transform.position,phexas[j].transform.position) <= 25 && hexass[i].name != myn) {
-							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/25)) < economy){
+							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/100)) < economy){
 								if ((hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud) > ludnaj) {
 									ludnaj = hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud;
 									best = i;
@@ -89,7 +94,7 @@ public class ai : MonoBehaviour {
 						}
 					}
 				}
-				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/25);
+				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/100);
 				hexass [best].GetComponent<hexp> ().Przejecie (myn, myc, this.gameObject);
 			} else {
 				float ludnaj = 0;
@@ -97,7 +102,7 @@ public class ai : MonoBehaviour {
 				for(int i=0;i<hexass.Length;i++){
 					for (int j = 0; j < phexas.Length; j++) {
 						if (Vector2.Distance (hexass[i].transform.position,phexas[j].transform.position) <= 25 && hexass[i].name != myn) {
-							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/125)) < economy){
+							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/100)) < economy){
 								if (hexass [i].GetComponent<hexp> ().economy > ludnaj) {
 									ludnaj = hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud;
 									best = i;
@@ -106,11 +111,43 @@ public class ai : MonoBehaviour {
 						}
 					}
 				}
-				Debug.Log (economy);
-				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/25);
-				Debug.Log (economy);
+				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/100);
 				hexass [best].GetComponent<hexp> ().Przejecie (myn, myc, this.gameObject);
 			}
+			if (actlud > (maxactlud / 4)) {
+				int best = 0;
+				float jejl = 0;
+				for (int j = 0; j < phexas.Length; j++) {
+					if (phexas [j].GetComponent<hexp> ().lud > jejl) {
+						jejl = phexas [j].GetComponent<hexp> ().lud;
+						best = j;
+					}
+				}
+				float tet = phexas[best].GetComponent<hexp> ().lud / 3;
+				phexas[best].GetComponent<hexp> ().lud -= tet;
+				army += tet;
+			}
+			GameObject tey = GameObject.Find ("Player");
+			if (tey.GetComponent<player> ().economy > economy) {
+				for (int y = 0; y < wc.tc; y++) {
+					int best = 0;
+					float jejl = 0;
+					for (int j = 0; j < phexas.Length; j++) {
+						if (phexas [j].GetComponent<hexp> ().lud > jejl) {
+							jejl = phexas [j].GetComponent<hexp> ().lud;
+							best = j;
+						}
+					}
+					float tet = phexas [best].GetComponent<hexp> ().lud / 5;
+					economy -= phexas [best].GetComponent<hexp> ().economy;
+					phexas [best].GetComponent<hexp> ().lud -= tet;
+					army += tet;
+				}
+				int ghg = Random.Range (0, (int)szpiedzy);
+				tey.GetComponent<player> ().economy -= tey.GetComponent<player> ().economy * (ghg / 100);
+			}
+			int ghgx = Random.Range(0,(1*wc.tc));
+
 		}
 	}
 	public void add(float[] jej){

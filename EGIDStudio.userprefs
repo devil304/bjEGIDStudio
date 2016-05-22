@@ -1,18 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\hexp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\dymekdane.cs">
     <Files>
-      <File FileName="Assets\scripts\hexp.cs" Line="29" Column="46" />
-      <File FileName="Assets\scripts\ai.cs" Line="83" Column="70" />
-      <File FileName="Assets\scripts\dymekdane.cs" Line="31" Column="18" />
-      <File FileName="Assets\scripts\player.cs" Line="76" Column="65" />
-      <File FileName="Assets\scripts\worldcontroller.cs" Line="38" Column="40" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ai.cs">
-    <Files>
-      <File FileName="Assets\scripts\ai.cs" Line="91" Column="1" />
->>>>>>> 8cb5f58a3c207af4ac21837b8047f259f9671a06
+      <File FileName="Assets\scripts\dymekdane.cs" Line="50" Column="68" />
+      <File FileName="Assets\scripts\ai.cs" Line="43" Column="18" />
+      <File FileName="Assets\scripts\player.cs" Line="59" Column="5" />
+      <File FileName="Assets\scripts\hexp.cs" Line="27" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
