@@ -73,7 +73,7 @@ public class player : MonoBehaviour {
 					phexas [l].GetComponent<hexp> ().up ();
 				}
 			}
-			economy += (actlud / 100F) * (economy / 100F) * (morale / 100F);
+			economy += (actlud / 50F) * (economy / 100F) * (morale / 75F);
 			if (actlud >= maxactlud) {
 				trigerrr = true;
 			} else {
