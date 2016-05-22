@@ -11,6 +11,8 @@ public class dymekdane : MonoBehaviour {
 	public Text d5;
 	public float cos;
 	public player pp;
+	public bool cb = false;
+	public float dys;
 	// Use this for initialization
 	void Start () {
 		d1 = GameObject.Find ("morale").GetComponent<Text> ();
@@ -21,19 +23,27 @@ public class dymekdane : MonoBehaviour {
 		d1.text = ((int)hxp.morale).ToString ();
 		d2.text = ((int)hxp.economy).ToString ();
 		d3.text = ((int)hxp.lud).ToString ();
-//s		d4.text = ((int)hxp.maxlud).ToString ();
+//		d4.text = ((int)hxp.maxlud).ToString ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		cos = pp.hexas.Length * (hxp.costr/100);
+		cos = pp.hexas.Length * (hxp.costr/125);
 		d5.text = ((int)cos).ToString ();
 	}
 	public void kup(){
 		if (cos < pp.GetComponent<player> ().economy) {
-			//if(pp.GetComponent<player> ().
-			pp.GetComponent<player> ().economy -= cos;
-			this.transform.parent.gameObject.GetComponent<hexp> ().Przejecie (pp.GetComponent<player> ().myn,pp.GetComponent<player> ().myc,pp.gameObject);
+			for (int i = 0; i < pp.GetComponent<player> ().phexas.Length; i++) {
+				if (Vector2.Distance (pp.GetComponent<player> ().phexas[i].transform.position,this.transform.parent.transform.position) <= 25) {
+					dys = Vector2.Distance (pp.GetComponent<player> ().phexas [i].transform.position, this.transform.parent.transform.position);
+					cb = true;
+				}
+			}
+			if (cb) {
+				pp.GetComponent<player> ().economy -= cos;
+				this.transform.parent.gameObject.GetComponent<hexp> ().Przejecie (pp.GetComponent<player> ().myn, pp.GetComponent<player> ().myc, pp.gameObject);
+				cb = false;
+			}
 		}
 	}
 }

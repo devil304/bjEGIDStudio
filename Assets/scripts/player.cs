@@ -18,6 +18,7 @@ public class player : MonoBehaviour {
 	public worldcontroller wc;
 	public Color myc;
 	public string myn;
+	public bool trigerrr;
 	// Use this for initialization
 	void Start () {
 		this.name = "Player";
@@ -47,11 +48,12 @@ public class player : MonoBehaviour {
 		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
+			wc.rt = true;
 			activehep = 1;
 			phexas = new GameObject[1];
 			hep = 1;
 			for (int i = 0; i < hexas.Length; i++) {
-				if (hexas [i].tag == "hex" && hexas [i].name == "player") {
+				if (hexas [i].tag == "hex" && hexas [i].name == myn) {
 					GameObject[] tmpx = new GameObject[phexas.Length];
 					for(int j = 0;j<phexas.Length;j++){
 						tmpx[j] = phexas[j];
@@ -63,18 +65,21 @@ public class player : MonoBehaviour {
 					phexas [hep-1] = hexas [i];
 					hep++;
 				}
-				actlud = 0;
-				morale = 0;
-				for (int l = 0; l < phexas.Length; l++) {
-					if (phexas [l] != null) {
-						phexas [l].GetComponent<hexp> ().up ();
-					}
-				}
-				economy += (actlud / 125F) * (economy / 125F) * (morale / 100F);
-
-				morale -= army / 100;
-				wc.rt = true;
 			}
+			actlud = 0;
+			morale = 0;
+			for (int l = 0; l < phexas.Length; l++) {
+				if (phexas [l] != null) {
+					phexas [l].GetComponent<hexp> ().up ();
+				}
+			}
+			economy += (actlud / 100F) * (economy / 100F) * (morale / 100F);
+			if (actlud >= maxactlud) {
+				trigerrr = true;
+			} else {
+				trigerrr = false;
+			}
+			morale -= army / 100;
 		}
 	}
 	public void turab (){
