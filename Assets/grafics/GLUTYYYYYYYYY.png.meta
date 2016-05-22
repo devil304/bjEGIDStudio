@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: d10c0c1fbf21e0b4d99749c50e8e3dfd
+timeCreated: 1463924600
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GLUTYYYYYYYYY_0
+    21300002: GLUTYYYYYYYYY_1
+    21300004: GLUTYYYYYYYYY_2
+    21300006: GLUTYYYYYYYYY_3
+    21300008: GLUTYYYYYYYYY_4
+    21300010: GLUTYYYYYYYYY_5
+    21300012: GLUTYYYYYYYYY_6
+    21300014: GLUTYYYYYYYYY_7
+    21300016: GLUTYYYYYYYYY_8
+    21300018: GLUTYYYYYYYYY_9
+    21300020: GLUTYYYYYYYYY_10
+    21300022: GLUTYYYYYYYYY_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GLUTYYYYYYYYY_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 444
+        width: 367
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -183.5, y: 168}
+        - {x: -183.5, y: 0}
+        - {x: 183.5, y: 0}
+        - {x: 183.5, y: 168}
+    - name: GLUTYYYYYYYYY_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 452
+        width: 368
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -184, y: 160}
+        - {x: -184, y: 0}
+        - {x: 184, y: 0}
+        - {x: 184, y: 160}
+    - name: GLUTYYYYYYYYY_2
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 449
+        width: 372
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -186, y: 163}
+        - {x: -186, y: 0}
+        - {x: 186, y: 0}
+        - {x: 186, y: 163}
+    - name: GLUTYYYYYYYYY_3
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 454
+        width: 370
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -185, y: 158}
+        - {x: -185, y: 0}
+        - {x: 185, y: 0}
+        - {x: 185, y: 158}
+    - name: GLUTYYYYYYYYY_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 370
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -185, y: 161}
+        - {x: -185, y: 0}
+        - {x: 185, y: 0}
+        - {x: 185, y: 161}
+    - name: GLUTYYYYYYYYY_5
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 240
+        width: 368
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -184, y: 163}
+        - {x: -184, y: 0}
+        - {x: 184, y: 0}
+        - {x: 184, y: 163}
+    - name: GLUTYYYYYYYYY_6
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 224
+        width: 365
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -182.5, y: 161}
+        - {x: -182.5, y: 0}
+        - {x: 182.5, y: 0}
+        - {x: 182.5, y: 161}
+    - name: GLUTYYYYYYYYY_7
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 220
+        width: 368
+        height: 162
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -184, y: 162}
+        - {x: -184, y: 0}
+        - {x: 184, y: 0}
+        - {x: 184, y: 162}
+    - name: GLUTYYYYYYYYY_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 371
+        height: 157
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -185.5, y: 157}
+        - {x: -185.5, y: 0}
+        - {x: 185.5, y: 0}
+        - {x: 185.5, y: 157}
+    - name: GLUTYYYYYYYYY_9
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 374
+        height: 157
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -187, y: 157}
+        - {x: -187, y: 0}
+        - {x: 187, y: 0}
+        - {x: 187, y: 157}
+    - name: GLUTYYYYYYYYY_10
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 370
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -185, y: 165}
+        - {x: -185, y: 0}
+        - {x: 185, y: 0}
+        - {x: 185, y: 165}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
