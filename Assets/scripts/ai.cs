@@ -67,13 +67,33 @@ public class ai : MonoBehaviour {
 					phexas [l].GetComponent<hexp> ().up ();
 				}
 			}
-			economy += (actlud / 50F) * (economy / 100F) * (morale / 75F);
+			economy += (actlud / 10F) * (economy / 50F) * (morale / 25F);
 			if (actlud >= maxactlud) {
 				trigerrr = true;
 			} else {
 				trigerrr = false;
 			}
 			morale -= army / 100;
+			if (actlud >= maxactlud) {
+				float ludnaj = 0;
+				int best;
+				for(int i=0;i<hexass.Length;i++){
+					for (int j = 0; j < phexas.Length; j++) {
+						if (Vector2.Distance (hexass[i].transform.position,phexas[j].transform.position) <= 25) {
+							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/125)) < economy){
+								if ((hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud) > ludnaj) {
+									ludnaj = hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud;
+									best = i;
+								}
+							}
+						}
+					}
+					economy -= hexass.Length * (hexass [best].GetComponent<hexp> ().costr/125);
+
+				}
+			} else {
+
+			}
 		}
 	}
 	public void add(float[] jej){

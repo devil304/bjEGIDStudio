@@ -34,6 +34,9 @@ public class worldcontroller : MonoBehaviour {
 	}
 	void Update () {
 		if (!pt && rt) {
+			for (int i = 0; i < hexys.Length; i++) {
+				hexys [i].SendMessage ("korektax");
+			}
 			uk = GameObject.Find ("nick");
 			uk.GetComponent<Text>().text = "Komputer";
 			u = GameObject.Find ("tura").GetComponent<ui> ();
