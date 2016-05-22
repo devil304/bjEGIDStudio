@@ -19,7 +19,8 @@ public class dymekdane : MonoBehaviour {
 		d2 = GameObject.Find ("ekonomia").GetComponent<Text> ();
 		d3 = GameObject.Find ("ludnosc").GetComponent<Text> ();
 		hxp = transform.parent.GetComponent<hexp> ();
-		pp = GameObject.Find ("Player").GetComponent<player>();
+		GameObject lol = GameObject.Find("Player");
+		pp = lol.GetComponent<player>();
 		d1.text = ((int)hxp.morale).ToString ();
 		d2.text = ((int)hxp.economy).ToString ();
 		d3.text = ((int)hxp.lud).ToString ();
@@ -32,7 +33,7 @@ public class dymekdane : MonoBehaviour {
 		d5.text = ((int)cos).ToString ();
 	}
 	public void kup(){
-		if (cos < pp.GetComponent<player> ().economy) {
+		if (cos < pp.economy) {
 			for (int i = 0; i < pp.GetComponent<player> ().phexas.Length; i++) {
 				if (Vector2.Distance (pp.GetComponent<player> ().phexas[i].transform.position,this.transform.parent.transform.position) <= 25) {
 					dys = Vector2.Distance (pp.GetComponent<player> ().phexas [i].transform.position, this.transform.parent.transform.position);
