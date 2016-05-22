@@ -21,6 +21,10 @@ public class hexp : MonoBehaviour {
 	void Update(){
 		if (!ow) {
 			costr = (morale + economy + maxlud + lud);
+		} else if (ow.name == "Player") {
+			costr = (morale + economy + maxlud + lud) * (ow.GetComponent<player> ().economy / 10);
+		} else if (ow.name == "E1" || ow.name == "E2" || ow.name == "E3") {
+			costr = (morale + economy + maxlud + lud) * (ow.GetComponent<ai> ().economy / 10);
 		} else {
 			costr = (morale + economy + maxlud + lud);
 		}

@@ -76,11 +76,11 @@ public class ai : MonoBehaviour {
 			morale -= army / 100;
 			if (actlud >= maxactlud) {
 				float ludnaj = 0;
-				int best;
+				int best = 0;
 				for(int i=0;i<hexass.Length;i++){
 					for (int j = 0; j < phexas.Length; j++) {
 						if (Vector2.Distance (hexass[i].transform.position,phexas[j].transform.position) <= 25) {
-							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/125)) < economy){
+							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/25)) < economy){
 								if ((hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud) > ludnaj) {
 									ludnaj = hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud;
 									best = i;
@@ -88,11 +88,28 @@ public class ai : MonoBehaviour {
 							}
 						}
 					}
-					economy -= hexass.Length * (hexass [best].GetComponent<hexp> ().costr/125);
-
 				}
+				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/25);
+				hexass [best].GetComponent<hexp> ().Przejecie (myn, myc, this.gameObject);
 			} else {
-
+				float ludnaj = 0;
+				int best = 0;
+				for(int i=0;i<hexass.Length;i++){
+					for (int j = 0; j < phexas.Length; j++) {
+						if (Vector2.Distance (hexass[i].transform.position,phexas[j].transform.position) <= 25) {
+							if((hexass.Length * (hexass [i].GetComponent<hexp> ().costr/125)) < economy){
+								if (hexass [i].GetComponent<hexp> ().economy > ludnaj) {
+									ludnaj = hexass [i].GetComponent<hexp> ().maxlud - hexass [i].GetComponent<hexp> ().lud;
+									best = i;
+								}
+							}
+						}
+					}
+				}
+				Debug.Log (economy);
+				economy -= phexas.Length * (hexass [best].GetComponent<hexp> ().costr/125);
+				Debug.Log (economy);
+				hexass [best].GetComponent<hexp> ().Przejecie (myn, myc, this.gameObject);
 			}
 		}
 	}
