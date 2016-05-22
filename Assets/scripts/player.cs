@@ -47,46 +47,34 @@ public class player : MonoBehaviour {
 		}
 		def = army * (((2 * morale) + economy)/3);
 		if (wc.pt && !wc.rt) {
-			actlud = 0;
 			activehep = 1;
-			phexas = new GameObject[0];
+			phexas = new GameObject[1];
+			hep = 1;
 			for (int i = 0; i < hexas.Length; i++) {
-				hexas [i].GetComponent<hexp> ().up();
 				if (hexas [i].tag == "hex" && hexas [i].name == "player") {
-					GameObject[] tmpgo = new GameObject[1];
-					if (phexas.Length != 0) {
-						tmpgo = new GameObject[phexas.Length];
-						tmpgo = phexas;
-						phexas = new GameObject[phexas.Length + 1];
-					} else {
-						phexas = new GameObject[1];
+					GameObject[] tmpx = new GameObject[phexas.Length];
+					for(int j = 0;j<phexas.Length;j++){
+						tmpx[j] = phexas[j];
 					}
-					if (phexas.Length > 1) {
-						for(int x = 0;x<tmpgo.Length;x++){
-							phexas[x] = tmpgo[x];
-						}
+					phexas = new GameObject[hep];
+					for(int j = 0;j<tmpx.Length;j++){
+						phexas[j] = tmpx[j];
 					}
-					phexas [phexas.Length - 1] = hexas [i];
-					if (hexas [i].GetComponent<hexp> ().lud < hexas [i].GetComponent<hexp> ().maxlud) {
-						activehep++;
+					phexas [hep-1] = hexas [i];
+					hep++;
+				}
+				actlud = 0;
+				morale = 0;
+				for (int l = 0; l < phexas.Length; l++) {
+					if (phexas [l] != null) {
+						phexas [l].GetComponent<hexp> ().up ();
 					}
 				}
+				economy += (actlud / 125F) * (economy / 125F) * (morale / 100F);
+
+				morale -= army / 100;
+				wc.rt = true;
 			}
-			hep = phexas.Length + 1;
-			economy += (actlud / 150F) * (economy / 150F) * morale / 25F;
-			if (actlud >= maxactlud) {
-				actlud = maxactlud;
-				if (morale > 0) {
-					morale -= actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
-				} else {
-					morale += -1 * actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
-				}
-			}
-			if (morale <= 0){
-				morale += -1 * actlud * (1F / 250F) + actlud * (1F / 100F) * (morale / 50F);
-			}
-			morale -= army / 100;
-			wc.rt = true;
 		}
 	}
 	public void turab (){
@@ -95,7 +83,6 @@ public class player : MonoBehaviour {
 		}
 	}
 	public void add(float[] jej){
-		morale += jej[0];
 		maxactlud += jej[2];
 		economy += jej[3];
 	}

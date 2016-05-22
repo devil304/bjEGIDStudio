@@ -24,16 +24,32 @@ public class hexp : MonoBehaviour {
 		this.transform.GetChild (0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer> ().color = nc;
 		ow = owner;
 		float[] tmpx = new float[4];
-		tmpx [0] = morale;
 		tmpx [2] = maxlud;
 		tmpx [3] = economy;
 		owner.SendMessage("add",tmpx);
 	}
 	public void up(){
-		lud += lud * (5F / 100F) * (morale / 50F);
-		ow.GetComponent<player> ().actlud += lud;
+		lud += lud * (5F / 100F) * (ow.gameObject.GetComponent<player> ().morale / 50F);
 		if (lud > maxlud) {
 			lud = maxlud;
 		}
+		if (ow.gameObject.GetComponent<player> ().actlud >= ow.gameObject.GetComponent<player> ().maxactlud) {
+			if (lud > maxlud) {
+				lud = maxlud;
+			}
+			if (morale > 0) {
+				morale -= (lud * (1F / 250F)) * (morale/100F);
+			} else {
+				morale -= (lud * (1F / 250F)) * (morale/100F);
+			}
+		}
+		if (morale > 0) {
+			morale += (lud / 175F) * (ow.gameObject.GetComponent<player> ().economy / 125F);
+		}
+		if (morale <= 0) {
+			morale -= (lud * (1F / 250F)) * (morale/100F);
+		}
+		ow.gameObject.GetComponent<player> ().morale += morale;
+		ow.gameObject.GetComponent<player> ().actlud += lud;
 	}
 }

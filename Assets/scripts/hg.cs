@@ -40,7 +40,7 @@ public class hg : MonoBehaviour {
 		}
 		if (i%50< 4 && takx) {
 			if (!GameObject.Find (gracze [i % 50].name) && !GameObject.FindGameObjectWithTag ("player")) {
-				Instantiate (gracze [i % 50], this.transform.position, gracze [i % 50].transform.rotation);
+				Instantiate (gracze [i % 50], this.transform.position, Quaternion.identity);
 				this.GetComponent<hexp>().Przejecie (nazwa [i % 50], cr [i % 50],gracze[i%50].gameObject);
 			}
 		}
@@ -78,7 +78,7 @@ public class hg : MonoBehaviour {
 		}
 		if (i%50< 4 && takx) {
 			if (!GameObject.Find (gracze [i % 50].name) && !GameObject.FindGameObjectWithTag ("player")) {
-				Instantiate (gracze [i % 50], this.transform.position, gracze [i % 50].transform.rotation);
+				Instantiate (gracze [i % 50], this.transform.position, Quaternion.identity);
 				this.GetComponent<hexp>().Przejecie (nazwa [i % 50], cr [i % 50],gracze[i%50].gameObject);
 			}
 		}

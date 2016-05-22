@@ -18,16 +18,16 @@ public class dymekdane : MonoBehaviour {
 		d3 = GameObject.Find ("ludnosc").GetComponent<Text> ();
 		hxp = transform.parent.GetComponent<hexp> ();
 		pp = GameObject.Find ("Player").GetComponent<player>();
-		d1.text = hxp.morale.ToString ();
-		d2.text = hxp.economy.ToString ();
-		d3.text = hxp.lud.ToString ();
-		d4.text = hxp.maxlud.ToString ();
+		d1.text = ((int)hxp.morale).ToString ();
+		d2.text = ((int)hxp.economy).ToString ();
+		d3.text = ((int)hxp.lud).ToString ();
+//s		d4.text = ((int)hxp.maxlud).ToString ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		cos = pp.hexas.Length * (hxp.costr/100);
-		d5.text = cos.ToString ();
+		d5.text = ((int)cos).ToString ();
 	}
 	public void kup(){
 		if (cos < pp.GetComponent<player> ().economy) {
