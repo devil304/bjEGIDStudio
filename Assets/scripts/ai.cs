@@ -14,7 +14,7 @@ public class ai : MonoBehaviour {
 	public float actlud;
 	public float maxactlud;
 	public GameObject moje;
-	public GameObject[] hexas;
+	public GameObject[] hexass;
 	public GameObject[] phexas;
 	// Use this for initialization
 	public worldcontroller wc;
@@ -25,6 +25,7 @@ public class ai : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+		hexass = GameObject.FindGameObjectsWithTag ("hex");
 		wc = GameObject.Find ("Main Camera").GetComponent<worldcontroller> ();
 		string my = "(";
 		char mc = my[0];
@@ -45,8 +46,8 @@ public class ai : MonoBehaviour {
 			activehep = 1;
 			phexas = new GameObject[1];
 			hep = 1;
-			for (int i = 0; i < hexas.Length; i++) {
-				if (hexas [i].tag == "hex" && hexas [i].name == myn) {
+			for (int i = 0; i < hexass.Length; i++) {
+				if (hexass [i].tag == "hex" && hexass [i].name == myn) {
 					GameObject[] tmpx = new GameObject[phexas.Length];
 					for(int j = 0;j<phexas.Length;j++){
 						tmpx[j] = phexas[j];
@@ -55,7 +56,7 @@ public class ai : MonoBehaviour {
 					for(int j = 0;j<tmpx.Length;j++){
 						phexas[j] = tmpx[j];
 					}
-					phexas [hep-1] = hexas [i];
+					phexas [hep-1] = hexass [i];
 					hep++;
 				}
 			}
@@ -76,9 +77,7 @@ public class ai : MonoBehaviour {
 		}
 	}
 	public void add(float[] jej){
-		morale += jej[0];
-		actlud += jej[1];
 		maxactlud += jej[2];
-		economy += jej[3];
+		economy += jej[3];	
 	}
 }

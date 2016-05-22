@@ -43,6 +43,13 @@ public class hexp : MonoBehaviour {
 			tmpx [3] = economy;
 			owner.SendMessage ("add", tmpx);
 		}
+		if (this.name == "E1") {
+			this.name = "e1";
+		} else if (this.name == "E2") {
+			this.name = "e2";
+		} else if (this.name == "E3") {
+			this.name = "e3";
+		}
 	}
 	public void up(){
 		if (ow.name == "Player") {
