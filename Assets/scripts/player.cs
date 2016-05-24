@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class player : MonoBehaviour {
-	public float szpiedzy;
+	public double szpiedzy;
 	public ui[] u;
-	public float def;
-	public float morale;
-	public float economy;
-	public float army;
+	public double def;
+	public double morale;
+	public double economy;
+	public double army;
 	public int hep;
 	public int activehep;
-	public float actlud;
-	public float maxactlud;
+	public double actlud;
+	public double maxactlud;
 	public GameObject moje;
 	public GameObject[] hexas;
 	public GameObject[] phexas;
@@ -84,7 +84,11 @@ public class player : MonoBehaviour {
 					phexas [l].GetComponent<hexp> ().up ();
 				}
 			}
-			economy += (actlud / 10F) * (economy / 75F) * (morale / 25F);
+			if (army > 1) {
+				economy += (actlud / 10F) * (economy / 50F) * (morale / 20F) * (army / 10F);
+			} else {
+				economy += (actlud / 10F) * (economy / 50F) * (morale / 20F);
+			}
 			if (actlud >= maxactlud) {
 				trigerrr = true;
 			} else {
@@ -92,13 +96,30 @@ public class player : MonoBehaviour {
 			}
 			morale -= army / 100;
 			if(wc.tc > 5){
-			if (phexas.Length < 3 || actlud <= 0 || economy <= 0 || morale <= 0) {
+				if (phexas.Length < 3 || (int)actlud <= 0 || (int)economy <= 0 || (int)morale <= 0) {
 				Application.LoadLevel (lc);
 			}
 			if (phexas.Length > hexas.Length) {
 				Application.LoadLevel (lc+1);
 			}
 				}
+			if (economy > 100000) {
+				economy = 100000;
+			} else if (economy < 0) {
+				economy = 0;
+			}
+			if (szpiedzy <= 0) {
+				szpiedzy = 0;
+			}
+			if (morale > 100000) {
+				morale = 100000;
+			}
+			if (actlud < 0) {
+				actlud = 0;
+			}
+			if (army <= 0) {
+				army = 0;
+			}
 		}
 	}
 	public void turab (){

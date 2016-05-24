@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class hexp : MonoBehaviour {
-	public float morale;
+	public double morale;
 	public float economy;
 	public float maxlud;
 	public float lud;
 	public GameObject ow;
 	public int x;
 	public int y;
-	public float costr;
+	public double costr;
 	void Start(){
 		morale = Random.Range(1,10);
 		economy = Random.Range(1,10);

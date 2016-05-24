@@ -17,9 +17,12 @@ public class audio : MonoBehaviour {
 		if (!audiox.isPlaying && Application.loadedLevelName != "gex") {
 			audiox.clip = otherClip [Random.Range (0, otherClip.Length - 1)];
 			audiox.Play ();
-		} else {
+		} else if(!audiox.isPlaying){
+		GameObject tmp = GameObject.Find ("Main Camera");
+		if(tmp.GetComponent<worldcontroller>().ais.Length == 3){
 			audiox.clip = otherClip [Random.Range (0, otherClip.Length - 1)];
 			audiox.Play ();
+		}
 		}
 	}
 }

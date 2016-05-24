@@ -9,7 +9,7 @@ public class dymekdane : MonoBehaviour {
 	public Text d3;
 	public Text d4;
 	public Text d5;
-	public float cos;
+	public double cos;
 	public player pp;
 	public bool cb = false;
 	public float dys;
